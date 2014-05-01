@@ -4,13 +4,56 @@
  <title>WFortin</title>
  <link href="http://wfortin.github.io/atom.xml" rel="self"/>
  <link href="http://wfortin.github.io/"/>
- <updated>2014-04-30T22:47:23-04:00</updated>
+ <updated>2014-04-30T23:54:43-04:00</updated>
  <id>http://wfortin.github.io</id>
  <author>
    <name>William Fortin</name>
    <email></email>
  </author>
 
+ 
+ <entry>
+   <title>Automate Your Application Development</title>
+   <link href="http://wfortin.github.io/blog/Automate-Your-Development"/>
+   <updated>2014-04-30T00:00:00-04:00</updated>
+   <id>http://wfortin.github.io/blog/Automate-Your-Development</id>
+   <content type="html">&lt;p&gt;Take the time to setup a build process for your new project, you will see the benifits instantly. I’ve recently experimented with &lt;a href=&quot;http://ant.apache.org/&quot;&gt;Apcache Ant&lt;/a&gt; which is a widely known build automation software used mostly by the Java community. &lt;em&gt;I don’t like Ant&lt;/em&gt;. &lt;em&gt;I don’t like XML&lt;/em&gt;. Especially in a JavaScript project. Fortunately there are projects like &lt;a href=&quot;http://gruntjs.com/&quot;&gt;Grunt&lt;/a&gt; and &lt;a href=&quot;http://gulpjs.com/&quot;&gt;Gulp&lt;/a&gt; that are adapted to a JavaScript application stack.&lt;/p&gt;
+
+&lt;h1 id=&quot;i-choose-gulp&quot;&gt;I choose Gulp&lt;/h1&gt;
+&lt;p&gt;I’ve decided to write my apps with Gulp.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;code-over-configuration&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;That was the selling point. I just said that I don’t like XML. Even if Ant used JSON, it wouldn’t solve the problem at all. That’s pretty much what Grunt is to me, a bonified Ant version for JavaScript with a JSON configuration. On the other side, Gulp provides a more functional interface that you configure by code. Isn’t that what we do every day? And that’s what we’re good at!&lt;/p&gt;
+
+&lt;h1 id=&quot;remove-the-pain-points-of-preprocessors&quot;&gt;Remove the pain points of preprocessors&lt;/h1&gt;
+&lt;p&gt;I write my stylesheets in LESS. I write my scripts in TypeScript. If I had to fire up the console to compile each time I modified code, I’d probably go nuts (I actually started a big project this way, and lasted about 2 days).&lt;/p&gt;
+
+&lt;p&gt;Preprocessors are awesome, they are less error prone and facilitate maintenance and refactorings, but they can be a pain if not automated. Fortunately, Gulp offers many included plugins for the mosts popular compiled languages and a &lt;strong&gt;**&lt;/strong&gt;load of third-party plugins are also available.&lt;/p&gt;
+
+&lt;p&gt;Most build tools also offer a &lt;code&gt;watch&lt;/code&gt; task, that can monitor certain files or folders and run certain tasks.&lt;/p&gt;
+
+&lt;h1 id=&quot;use-it&quot;&gt;Use it&lt;/h1&gt;
+&lt;p&gt;Use it to&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;compile to JavaScript (&lt;a href=&quot;https://github.com/kotas/gulp-tsc&quot;&gt;TypeScript&lt;/a&gt;, &lt;a href=&quot;https://github.com/wearefractal/gulp-coffee&quot;&gt;CoffeeScript&lt;/a&gt;, etc.)&lt;/li&gt;
+  &lt;li&gt;compile to CSS (&lt;a href=&quot;https://github.com/plus3network/gulp-less&quot;&gt;LESS&lt;/a&gt;, &lt;a href=&quot;https://github.com/dlmanning/gulp-sass&quot;&gt;SASS&lt;/a&gt;, &lt;a href=&quot;https://github.com/stevelacy/gulp-stylus&quot;&gt;Stylus&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/terinjokes/gulp-uglify&quot;&gt;minify&lt;/a&gt; files&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/wearefractal/gulp-concat&quot;&gt;concatenate&lt;/a&gt; files&lt;/li&gt;
+  &lt;li&gt;run tests&lt;/li&gt;
+  &lt;li&gt;convert images to sprites stylesheets&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/spenceralger/gulp-jshint&quot;&gt;lint&lt;/a&gt; and check for error&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The list goes on. Each of these tasks can be invoked by a file change via the file watchers.&lt;/p&gt;
+
+&lt;p&gt;On your next project (or current), take a little time to set up a build process. It shouldn’t take you long and you will be happy to use all those fancy preprocessors and compile-to-JS languages and watch your productivity increase exponentially!&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Hello World!</title>

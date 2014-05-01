@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	<link href="//gmpg.org/xfn/11" rel="profile">
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link rel="canonical" href="http://wfortin.github.io/blog/Automate-Your-Development" />
+	<meta name="description" content="Some tips on automating an application build process to accelerate the development speed." />
+	<meta property="og:description" content="Some tips on automating an application build process to accelerate the development speed." />
+	<meta itemprop="image" content="http://wfortin.github.io/assets/images/icon.png" />
+	<meta property="og:image" content="http://wfortin.github.io/assets/images/icon.png" />
+	<meta property="og:title" content="Automate Your Application Development" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="http://wfortin.github.io/blog/Automate-Your-Development" />
+	<meta property="og:site_name" content="WFortin" />
+	<title>Automate Your Application Development &middot; WFortin</title>
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="HandheldFriendly" content="True" />
+	<meta name="MobileOptimized" content="320" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" type="text/css" media="only screen and (min-width: 900px)" href="/assets/css/desktop.css" />
+	<link rel="stylesheet" type="text/css" media="only screen and (max-width: 899px)" href="/assets/css/mobile.css" />
+	<link href="/assets/css/genericons.css" type="text/css" rel="stylesheet" />
+	<link href="/assets/css/syntax.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Fenix:400,400italic">
+	<link rel="apple-touch-icon" href="http://wfortin.github.io/assets/images/icon.png">
+	<link rel="shortcut icon" href="http://wfortin.github.io/assets/images/favicon.ico">
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="http://wfortin.github.io/atom.xml">
+	<script type="text/javascript" src="/assets/js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.stellar.min.js"></script>
+</head>
+
+	<body>
+		<header class="clean" style="background-image: url(/assets/images/cover.jpg); height: 100%;" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
+	
+	<label class="menu" for="_1">
+	<span class="genericon genericon-menu"></span>
+</label>
+<input id="_1" type="checkbox">
+<div class="menu-content">
+	<p class="menu-title">WFortin<p>
+	<div class="menu" style="background-color: #1a1a1a; z-index: -1;"></div>
+	
+		<a href="/">Home</a>
+	
+		<a href="/about.html">About</a>
+	
+	<hr>
+	
+		<a href="https://twitter.com/willyfortin" class="social-links-menu" target="_blank" title="Follow me on twitter"><span class="genericon genericon-twitter"></span></a>
+	
+		<a href="https://github.com/wfortin" class="social-links-menu" target="_blank" title="Fork me on github"><span class="genericon genericon-github"></span></a>
+	
+		<a href="https://plus.google.com/+WilliamFortin" class="social-links-menu" target="_blank" title="Add me on google+"><span class="genericon genericon-googleplus-alt"></span></a>
+	
+		<a href="http://wfortin.github.io/atom.xml" class="social-links-menu" target="_blank" title="Subscribe to my feed"><span class="genericon genericon-feed"></span></a>
+	
+</div>
+<div class="social-links" data-stellar-ratio="0.1">
+	
+		<a href="https://twitter.com/willyfortin" target="_blank" title="Follow me on twitter"><span class="genericon genericon-twitter"></span></a>
+	
+		<a href="https://github.com/wfortin" target="_blank" title="Fork me on github"><span class="genericon genericon-github"></span></a>
+	
+		<a href="https://plus.google.com/+WilliamFortin" target="_blank" title="Add me on google+"><span class="genericon genericon-googleplus-alt"></span></a>
+	
+		<a href="http://wfortin.github.io/atom.xml" target="_blank" title="Subscribe to my feed"><span class="genericon genericon-feed"></span></a>
+	
+</div>
+
+	<div id="post-info" data-stellar-ratio="0.7">
+		<h1>Automate Your Application Development</h1>
+		
+			<h2>Some tips on automating an application build process to accelerate the development speed.</h2>
+		
+		<a class="site-title" href="http://wfortin.github.io"><div class="site-icon-small" style="background-image: url(/assets/images/icon.png);"></div>WFortin</a>, in 30 April 2014
+	</div>
+	<div id="nav-icon" style="bottom: 30px;" data-stellar-ratio="4">
+		<a class="scroll" data-speed="500" href="#article"><span class="genericon genericon-expand"></span></a>
+	</div>
+</header>
+<div id="middle">
+	<div id="article">
+		<p>Take the time to setup a build process for your new project, you will see the benifits instantly. I’ve recently experimented with <a href="http://ant.apache.org/">Apcache Ant</a> which is a widely known build automation software used mostly by the Java community. <em>I don’t like Ant</em>. <em>I don’t like XML</em>. Especially in a JavaScript project. Fortunately there are projects like <a href="http://gruntjs.com/">Grunt</a> and <a href="http://gulpjs.com/">Gulp</a> that are adapted to a JavaScript application stack.</p>
+
+<h1 id="i-choose-gulp">I choose Gulp</h1>
+<p>I’ve decided to write my apps with Gulp.</p>
+
+<blockquote>
+  <p>code-over-configuration</p>
+</blockquote>
+
+<p>That was the selling point. I just said that I don’t like XML. Even if Ant used JSON, it wouldn’t solve the problem at all. That’s pretty much what Grunt is to me, a bonified Ant version for JavaScript with a JSON configuration. On the other side, Gulp provides a more functional interface that you configure by code. Isn’t that what we do every day? And that’s what we’re good at!</p>
+
+<h1 id="remove-the-pain-points-of-preprocessors">Remove the pain points of preprocessors</h1>
+<p>I write my stylesheets in LESS. I write my scripts in TypeScript. If I had to fire up the console to compile each time I modified code, I’d probably go nuts (I actually started a big project this way, and lasted about 2 days).</p>
+
+<p>Preprocessors are awesome, they are less error prone and facilitate maintenance and refactorings, but they can be a pain if not automated. Fortunately, Gulp offers many included plugins for the mosts popular compiled languages and a <strong>**</strong>load of third-party plugins are also available.</p>
+
+<p>Most build tools also offer a <code>watch</code> task, that can monitor certain files or folders and run certain tasks.</p>
+
+<h1 id="use-it">Use it</h1>
+<p>Use it to</p>
+
+<ul>
+  <li>compile to JavaScript (<a href="https://github.com/kotas/gulp-tsc">TypeScript</a>, <a href="https://github.com/wearefractal/gulp-coffee">CoffeeScript</a>, etc.)</li>
+  <li>compile to CSS (<a href="https://github.com/plus3network/gulp-less">LESS</a>, <a href="https://github.com/dlmanning/gulp-sass">SASS</a>, <a href="https://github.com/stevelacy/gulp-stylus">Stylus</a>)</li>
+  <li><a href="https://github.com/terinjokes/gulp-uglify">minify</a> files</li>
+  <li><a href="https://github.com/wearefractal/gulp-concat">concatenate</a> files</li>
+  <li>run tests</li>
+  <li>convert images to sprites stylesheets</li>
+  <li><a href="https://github.com/spenceralger/gulp-jshint">lint</a> and check for error</li>
+</ul>
+
+<p>The list goes on. Each of these tasks can be invoked by a file change via the file watchers.</p>
+
+<p>On your next project (or current), take a little time to set up a build process. It shouldn’t take you long and you will be happy to use all those fancy preprocessors and compile-to-JS languages and watch your productivity increase exponentially!</p>
+
+
+	</div>
+	
+</div>
+
+	
+		
+		
+		
+		
+		
+		
+	
+
+<footer class="clean" style="background-image: url(/media/2013-06-03-Hello-World/cover.jpg); height: 75%; min-height: 500px;" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="50">
+	<div id="nav-icon" style="top: 60px;" data-stellar-ratio="0.8">
+		<a class="scroll" data-speed="500" href="#article"><span class="genericon genericon-collapse"></span></a>
+	</div>
+	<div id="post-info" data-stellar-ratio="0.5" data-stellar-vertical-offset="120">
+		<h3>Featured post</h3>
+		<a href="/blog/Hello-World">
+			<h1>Hello World!</h1>
+			
+				<h2>This is my first post, in my first blog.</h2>
+			
+		</a>
+	</div>
+	<p class="copyright">&copy;2014, <a href="http://wfortin.github.io" target="_blank">William Fortin</a>. <a href="http://creativecommons.org/licenses/by-nc/2.5" target="_blank">All rights reserved</a>.</p>
+</footer>
+<script src="/assets/js/smooth-scroll.js"></script>
+
+		<script>
+		var width = $(window).width()
+		if ( width > 899 )
+		$( function(){
+		    $.stellar({
+		    	responsive: true,
+			verticalScrolling: true,
+			horizontalOffset: 0,
+			verticalOffset: 0,
+			positionProperty: 'transform',
+		    });
+		});
+		</script>
+	</body>
+</html>
