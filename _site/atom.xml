@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+ <title>Blog | WFortin</title>
+ <link href="http://wfortin.github.io/atom.xml" rel="self"/>
+ <link href="http://wfortin.github.io/"/>
+ <updated>2014-04-30T21:46:02-04:00</updated>
+ <id>http://wfortin.github.io</id>
+ <author>
+   <name>William Fortin</name>
+   <email></email>
+ </author>
+
+ 
+ <entry>
+   <title>Hello World!</title>
+   <link href="http://wfortin.github.io/blog/Hello-World"/>
+   <updated>2013-06-03T00:00:00-04:00</updated>
+   <id>http://wfortin.github.io/blog/Hello-World</id>
+   <content type="html">&lt;p&gt;This is my first post, in my first blog. I’ve been wanting to do this for a long time. This blog will primarly be about programming and technology. I will try to leave the most information on Node.js, Heroku, CSS, UX/UI, JavaScript, Linux, Web Development or any cool stuff that I run into and find interesting to experiment with.&lt;/p&gt;
+
+&lt;p&gt;Let’s start right with this blog… I could have done it on wordpress or drupal but since i got into Node I don’t really want to go back to PHP programming. I found an interessting Node package for blogging easily : Poet. I’ve set up a running server on heroku and was done in about an hour.&lt;/p&gt;
+
+&lt;p&gt;Here’s how I set up my blog.&lt;/p&gt;
+
+&lt;p&gt;First follow the &lt;a href=&quot;http://jsantell.com/post/getting-started-with-poet&quot;&gt;tutorial from the maker of poet&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We now want to host our blog on Heroku (for free!) so that other people can read it. There are little modifications to make. Here it goes :&lt;/p&gt;
+
+&lt;p&gt;First, you need the set the &lt;code&gt;engines&lt;/code&gt; in the &lt;code&gt;package.json&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;p&gt;Your &lt;code&gt;package.json&lt;/code&gt; should now look like this :&lt;/p&gt;
+&lt;pre&gt;
+{
+  &quot;name&quot;: &quot;NameOfMyProject&quot;,
+  &quot;version&quot;: &quot;0.0.1&quot;,
+  &quot;engines&quot;: [&quot;node &amp;gt;= 0.6.12&quot;],
+  &quot;private&quot; : true,
+  &quot;main&quot;: &quot;server.js&quot;,
+  &quot;dependencies&quot;:
+  {
+    &quot;poet&quot;    : &quot;&amp;gt;= 0.1.6&quot;,
+    &quot;jade&quot;    : &quot;&amp;gt;= 0.20.3&quot;,
+    &quot;express&quot; : &quot;&amp;gt;= 3.0.0rc5&quot;
+  },
+  &quot;engines&quot;:
+  {
+    &quot;node&quot;: &quot;0.8.x&quot;,
+    &quot;npm&quot;: &quot;1.1.x&quot;
+  }
+}
+&lt;/pre&gt;
+
+&lt;p&gt;Next, you can’t use a hardcoded port on Heroku. Heroku will give you an open port when running your application. You will need to change your &lt;code&gt;server.js&lt;/code&gt; file.
+Look for the line&lt;/p&gt;
+&lt;pre&gt;
+app.listen( 3000 );
+&lt;/pre&gt;
+&lt;p&gt;And change it to &lt;/p&gt;
+&lt;pre&gt;
+app.listen( process.env.PORT || 3000 );
+&lt;/pre&gt;
+
+&lt;p&gt;Next, you need to specify to Heroku wich process to run. Since we want to run &lt;code&gt;server.js&lt;/code&gt; on a web dyno, we’ll add a file named &lt;code&gt;Procfile&lt;/code&gt; and add the following command inside.&lt;/p&gt;
+&lt;pre&gt;
+web: node server.js
+&lt;/pre&gt;
+
+&lt;p&gt;Once these changes are made, we are ready to create our heroku app using the following commands :&lt;/p&gt;
+
+&lt;pre&gt;
+$ cd myappdirectory
+$ git init
+$ git commit -m &quot;First commit. Deploying on Heroku&quot;
+&lt;/pre&gt;
+
+&lt;pre&gt;
+$ heroku create
+&lt;/pre&gt;
+&lt;p&gt;This will create your app with a randomly generated name (Don’t worry, you can change that in the settings).&lt;/p&gt;
+
+&lt;pre&gt;
+$ git push heroku master
+&lt;/pre&gt;
+
+&lt;p&gt;That’s it you now have a fully working blog running on Node.js and hosted on Heroku. If something went wrong refer to the &lt;a href=&quot;http://jsantell.github.com/poet/&quot;&gt;Poet Documentation&lt;/a&gt; or the &lt;a href=&quot;https://github.com/jsantell/poet&quot;&gt;Poet GitHub Repo&lt;/a&gt; and also the &lt;a href=&quot;https://devcenter.heroku.com/&quot;&gt;Heroku Developer Center documentation&lt;/a&gt; for Node.js&lt;/p&gt;
+</content>
+ </entry>
+ 
+
+</feed>
