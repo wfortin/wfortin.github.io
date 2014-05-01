@@ -9,6 +9,9 @@ comments: true
 
 This is my first post, in my first blog. I've been wanting to do this for a long time. This blog will primarly be about programming and technology. I will try to leave the most information on Node.js, Heroku, CSS, UX/UI, JavaScript, Linux, Web Development or any cool stuff that I run into and find interesting to experiment with.
 
+> 2014-04-30 : Side note, this blog is now hosted on github and uses Jekyll blog engine
+
+
 Let's start right with this blog... I could have done it on wordpress or drupal but since i got into Node I don't really want to go back to PHP programming. I found an interessting Node package for blogging easily : Poet. I've set up a running server on heroku and was done in about an hour.
 
 Here's how I set up my blog.
