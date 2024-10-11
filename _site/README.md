@@ -1,2 +1,0 @@
-#WFortin - Personal blog
-=======

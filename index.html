@@ -1,39 +1,67 @@
----
-layout: default
-title: Home
----
-
-<header class="clean" style="height: 350px; background-image: url({{ site.cover }});" data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50">
-	{% include top.html %}
-	<a href="{{ site.url }}">
-		<div id="home-title" class="site-icon-home" style="background-image: url({{ site.icon }});" data-stellar-ratio="0.5"></div>
-	</a>
-</header>
-<div id="middle">
-<div id="post-list">
-	{% for post in paginator.posts %}
-		<div>
-			<span class="post-date">{{ post.date | date_to_long_string }}</span>
-			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-			<p class="post-description">{{ post.content | strip_html | truncatewords: 50 }}</p>
-		</div>
-		<br>
-	{% endfor %}
-</div>
-<nav class="pagination" role="navigation">
-	{% if paginator.next_page %}
-		<a class="newer-posts" href="/page{{paginator.next_page}}">&larr; Older posts</a>
-	{% endif %}
-	<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-	{% if paginator.previous_page %}
-		{% if paginator.page == 2 %}
-			<a class="older-posts" href="/">Newer posts &rarr;</a>
-		{% else %}
-			<a class="older-posts" href="/page{{paginator.previous_page}}">Newer posts &rarr;</a>
-		{% endif %}
-	{% endif %}
-</nav>
-</div>
-<footer class="clean" style="background-image: url({{ site.cover }}); background-position: bottom; height: 60px;">
-	<p class="copyright">&copy;{{ site.time | date: "%Y" }}, <a href="{{ site.copyright.url }}" target="_blank">{{ site.copyright.author }}</a>. <a href="{{ site.copyright.type_url }}" target="_blank">{{ site.copyright.type_title }}</a>.</p>
-</footer>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>William Fortin</title>
+  </head>
+  <body class="bg flex h-screen flex-col">
+    <section class="flex flex-col p-3">
+      <div class="flex max-w-[600px] flex-col gap-3">
+        <h1 class="font-display flex flex-col text-4xl font-thin leading-none">
+          William Fortin
+        </h1>
+        <p class="font-display text-gray-600">
+          Full-stack engineer with a frontend background and a decade of remote
+          experience in startups, passionate about creating delightful web
+          experiences.
+        </p>
+      </div>
+    </section>
+    <section class="mb-0 mt-auto flex flex-col gap-4 px-3 py-4">
+      <h2 class="font-display text-black">Experience</h2>
+      <div class="flex flex-row flex-wrap">
+        <div class="flex w-24 flex-col gap-3">
+          <h3 class="font-display text-gray-600">Tome</h3>
+          <img
+            src="./public/tome.svg"
+            class="box-border size-[72px] rounded-md bg-black p-4"
+          />
+        </div>
+        <div class="flex w-24 flex-col gap-3">
+          <h3 class="font-display text-gray-600">Pleo</h3>
+          <div>
+            <img
+              src="./public/pleo.svg"
+              class="box-border size-[72px] rounded-md bg-black p-2"
+            />
+          </div>
+        </div>
+        <div class="flex w-24 flex-col gap-3">
+          <h3 class="font-display text-gray-600">Coveo</h3>
+          <img
+            src="./public/coveo.svg"
+            class="box-border size-[72px] rounded-md bg-black p-3"
+          />
+        </div>
+      </div>
+    </section>
+    <section class="mb-0 mt-0 flex flex-col gap-4 px-3 py-4">
+      <h2 class="font-display text-black">Skills</h2>
+      <div class="font-display flex flex-row gap-3 text-gray-600">
+        TypeScript / React / CSS
+      </div>
+      <div class="font-display flex flex-row gap-3 text-gray-600">
+        Node.JS / APIs / REST / GraphQL / Prisma / PostgreSQL
+      </div>
+    </section>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
